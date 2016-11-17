@@ -34,7 +34,7 @@ void Bullet::Update(const GameTime *pGameTime)
 		m_position += m_direction * m_speed * pGameTime->GetTimeElapsed();
 
 		// Check if bullet is off-screen
-		if (m_position.Y < s_textureOrigin.Y)
+		if (m_position.Y < -s_textureOrigin.Y)
 		{
 			Deactivate();
 		}
