@@ -59,7 +59,7 @@ void Ship::Hit(const float damage)
 	{
  		m_hitPoints -= damage;
 
-		if (m_hitPoints >= 0)
+		if (m_hitPoints <= 0)
 		{
 			GameObject::Deactivate();
 		}
