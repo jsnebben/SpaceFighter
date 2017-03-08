@@ -1,0 +1,579 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        "SpaceFighter"
+    </assembly>
+    <members>
+        <member name="M:MainMenuScreen.Draw(GameTime!System.Runtime.CompilerServices.IsConst*)">
+            <summary>Used to render the menu.
+<param name="pGameTime">A pointer to the game's timing values.</param></summary>
+        </member>
+        <member name="M:MainMenuScreen.Update(GameTime!System.Runtime.CompilerServices.IsConst*)">
+            <summary>Used to update the menu.
+<param name="pGameTime">A pointer to the game's timing values.</param></summary>
+        </member>
+        <member name="M:MainMenuScreen.LoadContent">
+            <summary>Used to load the menu's content.</summary>
+        </member>
+        <member name="T:MainMenuScreen">
+            <summary>Class for the game's main menu</summary>
+        </member>
+        <member name="M:Level_1.Update(GameTime!System.Runtime.CompilerServices.IsConst*)">
+            <summary>Used to update the level.
+<param name="pGameTime">A pointer to the game's timing values.</param></summary>
+        </member>
+        <member name="M:Level_1.InitializeEnemies">
+            <summary>Used to setup the enemies at the beginning of the level.</summary>
+        </member>
+        <member name="T:Level_1">
+            <summary>Class for Level 1</summary>
+        </member>
+        <member name="M:PauseScreen.Draw(GameTime!System.Runtime.CompilerServices.IsConst*)">
+            <summary>Used to reneder the screen.
+<param name="pGameTime">A pointer to the game's timing values.</param></summary>
+        </member>
+        <member name="M:PauseScreen.HandleInput(InputState*)">
+            <summary>Used to manage what the screen should do based on the user input.
+<param name="pInput">A pointer to the input state.</param></summary>
+        </member>
+        <member name="T:PauseScreen">
+            <summary>Class for the pause screen.</summary>
+        </member>
+        <member name="M:GameplayScreen.Draw(GameTime!System.Runtime.CompilerServices.IsConst*)">
+            <summary>Used to reneder the screen.
+<param name="pGameTime">A pointer to the game's timing values.</param></summary>
+        </member>
+        <member name="M:GameplayScreen.Update(GameTime!System.Runtime.CompilerServices.IsConst*)">
+            <summary>Used to update the screen.
+<param name="pGameTime">A pointer to the game's timing values.</param></summary>
+        </member>
+        <member name="M:GameplayScreen.HandleInput(InputState*)">
+            <summary>Used to manage what the screen should do based on the user input.
+<param name="pInput">A pointer to the input state.</param></summary>
+        </member>
+        <member name="M:GameplayScreen.UnloadContent">
+            <summary>Used to unload the screen's content.</summary>
+        </member>
+        <member name="M:GameplayScreen.LoadContent">
+            <summary>Used to load the screen's content.</summary>
+        </member>
+        <member name="T:GameplayScreen">
+            <summary>Class for the gameplay screen. Where all of the action takes place!</summary>
+        </member>
+        <member name="T:Math">
+            <summary>Helper class for common math functions and constants.</summary>
+        </member>
+        <member name="T:MenuScreen">
+            <summary>Base class for all menus.</summary>
+        </member>
+        <member name="M:MenuItem.SetAlignment(System.Int32!System.Runtime.CompilerServices.IsConst)">
+            <summary>Sets the alignment for the item text.
+<param name="alpha">The alignment that the menu item text will be rendered.</param></summary>
+        </member>
+        <member name="M:MenuItem.SetAlpha(System.Single!System.Runtime.CompilerServices.IsConst)">
+            <summary>Sets the opacity for the item text.
+<param name="alpha">The opacity that the menu item text will be rendered.</param></summary>
+        </member>
+        <member name="M:MenuItem.SetColor(ALLEGRO_COLOR!System.Runtime.CompilerServices.IsConst)">
+            <summary>Sets the color for the item text.
+<param name="color">The color that the menu item text will be rendered.</param></summary>
+        </member>
+        <member name="M:MenuItem.SetPosition(Vector2!System.Runtime.CompilerServices.IsConst)">
+            <summary>Sets the position for the item text.
+<param name="position">The position on the screen that the menu item text will be
+rendered.</param></summary>
+        </member>
+        <member name="M:MenuItem.SetFont(ALLEGRO_FONT*)">
+            <summary>Sets the font for the item text.
+<param name="pFont">A pointer to the font that the menu item will use to
+display the text.</param></summary>
+        </member>
+        <member name="M:MenuItem.SetSelected(System.Boolean!System.Runtime.CompilerServices.IsConst)">
+            <summary>Makes this item the selected one in the containing menu.
+<param name="isSelected">Whether or not the item is being set as selected or
+unselected.</param></summary>
+        </member>
+        <member name="M:MenuItem.IsSelected">
+            <summary>Used to indicate if the item is the selected one in the menu.
+<returns>True if the item is selected, false otherwise.</returns></summary>
+        </member>
+        <member name="M:MenuItem.SetText(std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;!System.Runtime.CompilerServices.IsConst)">
+            <summary>Sets the display text for the item.
+<param name="text">The text that the menu item will display.</param></summary>
+        </member>
+        <member name="M:MenuItem.Select(MenuScreen*)">
+            <summary>Used to select the item.
+<param name="pMenuScreen">A pointer to the menu that the item belongs to.</param></summary>
+        </member>
+        <member name="M:MenuItem.Draw(GameTime!System.Runtime.CompilerServices.IsConst*)">
+            <summary>Used to draw the item.
+<param name="pGameTime">A pointer to the game's timing values.</param></summary>
+        </member>
+        <member name="M:MenuItem.Update(GameTime!System.Runtime.CompilerServices.IsConst*)">
+            <summary>Used to update the item.
+<param name="pGameTime">A pointer to the game's timing values.</param></summary>
+        </member>
+        <member name="T:MenuItem">
+            <summary>Class for selectable menu items.</summary>
+        </member>
+        <member name="M:SmallBioEnemy.GetHalfDimensions">
+            <summary>Gets the half-width and half-height of the game object.
+<returns>The half dimensions of the game object.</returns></summary>
+        </member>
+        <member name="M:SmallBioEnemy.ToString">
+            <summary>Gets a string representation of the game object.
+<returns>The game object's string representation.</returns></summary>
+        </member>
+        <member name="M:SmallBioEnemy.Draw(GameTime!System.Runtime.CompilerServices.IsConst*)">
+            <summary>Used to reneder the enemy.
+<param name="pGameTime">A pointer to the game's timing values.</param></summary>
+        </member>
+        <member name="M:SmallBioEnemy.Update(GameTime!System.Runtime.CompilerServices.IsConst*)">
+            <summary>Used to update the enemy.
+<param name="pGameTime">A pointer to the game's timing values.</param></summary>
+        </member>
+        <member name="M:SmallBioEnemy.SetTexture(std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;)">
+            <summary>Sets the shared texture of all SmallBioEnemys.
+<param name="assetPath">The location of the asset within the content folder.</param></summary>
+        </member>
+        <member name="T:SmallBioEnemy">
+            <summary>Class for small bio enemies.</summary>
+        </member>
+        <member name="M:EnemyShip.ToString">
+            <summary>Gets a string representation of the game object.
+<returns>The game object's string representation.</returns></summary>
+        </member>
+        <member name="M:EnemyShip.GetDelaySeconds">
+            <summary>Gets the time that an enemy should wait off screen, before activating.
+<returns>The time in seconds that the enemy will delay before activating.</returns></summary>
+        </member>
+        <member name="M:EnemyShip.Fire">
+            <summary>Used to make the enemy ship fire it's weapon.</summary>
+        </member>
+        <member name="M:EnemyShip.Initialize(Vector2!System.Runtime.CompilerServices.IsConst,System.Double!System.Runtime.CompilerServices.IsConst)">
+            <summary>Initializes the enemy ship.
+<param name="position">Position where the enemy ship will start from.</param><param name="delaySeconds">Time that the enemy will wait before becoming active.</param></summary>
+        </member>
+        <member name="M:EnemyShip.Draw(GameTime!System.Runtime.CompilerServices.IsConst*)">
+            <summary>Used to reneder the enemy.
+<param name="pGameTime">A pointer to the game's timing values.</param></summary>
+        </member>
+        <member name="T:EnemyShip">
+            <summary>Abstract class for all enemy ships.</summary>
+        </member>
+        <member name="M:Level.UpdateSectorPosition(GameObject*)">
+            <summary>Calculates and adds a game object to it's current sector.
+<param name="pGameObject">A pointer to the game object that will have its
+sector position updated.</param></summary>
+        </member>
+        <member name="M:Level.AddGameObject(GameObject*)">
+            <summary>Adds a game object to be managed by the level.
+<param name="pGameObject">A pointer to the game object that will be managed.</param></summary>
+        </member>
+        <member name="M:Level.Draw(GameTime!System.Runtime.CompilerServices.IsConst*)">
+            <summary>Used to render the level.
+<param name="pGameTime">A pointer to the game's timing values.</param></summary>
+        </member>
+        <member name="M:Level.Update(GameTime!System.Runtime.CompilerServices.IsConst*)">
+            <summary>Used to update the level.
+<param name="pGameTime">A pointer to the game's timing values.</param></summary>
+        </member>
+        <member name="M:Level.HandleInput(InputState*)">
+            <summary>Used to manage what the level should do based on the user input.
+<param name="pInput">A pointer to the input state.</param></summary>
+        </member>
+        <member name="M:Level.InitializeEnemies">
+            <summary>Used to setup the enemies at the beginning of the level.</summary>
+        </member>
+        <member name="M:Level.UnloadContent">
+            <summary>Used to unload the screen's content.</summary>
+        </member>
+        <member name="M:Level.LoadContent">
+            <summary>Used to load the screen's content.</summary>
+        </member>
+        <member name="M:Level.GetCurrentLevel">
+            <summary>Used to get a static pointer to the current level.</summary>
+        </member>
+        <member name="T:Level">
+            <summary>The abstract base class for all levels.</summary>
+        </member>
+        <member name="M:PlayerShip.GetHalfDimensions">
+            <summary>Gets the half-width and half-height of the game object.
+<returns>The half dimensions of the game object.</returns></summary>
+        </member>
+        <member name="M:PlayerShip.ToString">
+            <summary>Gets a string representation of the game object.
+<returns>The game object's string representation.</returns></summary>
+        </member>
+        <member name="M:PlayerShip.CanFire">
+            <summary>Used to indicate if the player ship is ready to fire.
+<returns>True if the ship is ready to fire, false otherwise.</returns></summary>
+        </member>
+        <member name="M:PlayerShip.Fire">
+            <summary>Used to make the player ship fire it's weapon.</summary>
+        </member>
+        <member name="M:PlayerShip.Draw(GameTime!System.Runtime.CompilerServices.IsConst*)">
+            <summary>Used to reneder the player ship.
+<param name="pGameTime">A pointer to the game's timing values.</param></summary>
+        </member>
+        <member name="M:PlayerShip.Update(GameTime!System.Runtime.CompilerServices.IsConst*)">
+            <summary>Used to update the player ship.
+<param name="pGameTime">A pointer to the game's timing values.</param></summary>
+        </member>
+        <member name="M:PlayerShip.HandleInput(InputState*)">
+            <summary>Used to manage what the player ship should do based on the user input.
+<param name="pInput">A pointer to the input state.</param></summary>
+        </member>
+        <member name="M:PlayerShip.SetTexture(std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;)">
+            <summary>Sets static texture for the player ship.
+<param name="assetPath">The location of the asset within the content folder.</param></summary>
+        </member>
+        <member name="T:PlayerShip">
+            <summary>Class for the player controlled ship.</summary>
+        </member>
+        <member name="M:Ship.ToString">
+            <summary>Gets a string representation of the game object.
+<returns>The game object's string representation.</returns></summary>
+        </member>
+        <member name="M:Ship.IsInvulnurable">
+            <summary>Used to indicate if a ship can take damage.
+<returns>True if the ship is invulnurable (cannot take damage), false otherwise.</returns></summary>
+        </member>
+        <member name="M:Ship.Hit(System.Single!System.Runtime.CompilerServices.IsConst)">
+            <summary>Used to inflict damage when a ship is hit.
+<param name="damage">A the amount of damage to inflict.</param></summary>
+        </member>
+        <member name="M:Ship.SetBulletPool(std.vector&lt;Bullet**,std.allocator&lt;Bullet**&gt;&gt;*)">
+            <summary>Sets the pool from where the bullets can be reused, when firing.
+<param name="pBullets">A vector of bullet poiners that can be reused.</param></summary>
+        </member>
+        <member name="M:Ship.Fire">
+            <summary>Used to make the ship fire it's weapon.</summary>
+        </member>
+        <member name="M:Ship.Draw(GameTime!System.Runtime.CompilerServices.IsConst*)">
+            <summary>Used to reneder the ship.
+<param name="pGameTime">A pointer to the game's timing values.</param></summary>
+        </member>
+        <member name="M:Ship.Update(GameTime!System.Runtime.CompilerServices.IsConst*)">
+            <summary>Used to update the ship.
+<param name="pGameTime">A pointer to the game's timing values.</param></summary>
+        </member>
+        <member name="T:Ship">
+            <summary>Abstract base class for all ships.</summary>
+        </member>
+        <member name="M:Bullet.ToString">
+            <summary>Gets a string representation of the game object.
+<returns>The game object's string representation.</returns></summary>
+        </member>
+        <member name="M:Bullet.GetDamage">
+            <summary>Gets the dammage that the bullet inflicts.
+<returns>The damage value that the bullet inflicts.</returns></summary>
+        </member>
+        <member name="M:Bullet.Activate(Vector2,System.Boolean)">
+            <summary>Activates the bullet.
+<param name="position">The position where the bullet should start.</param><param name="isShotByPlayer">Specifies if the player ship shot the bullet.</param></summary>
+        </member>
+        <member name="M:Bullet.Draw(GameTime!System.Runtime.CompilerServices.IsConst*)">
+            <summary>Used to reneder the bullet.
+<param name="pGameTime">A pointer to the game's timing values.</param></summary>
+        </member>
+        <member name="M:Bullet.Update(GameTime!System.Runtime.CompilerServices.IsConst*)">
+            <summary>Used to update the screen.
+<param name="pGameTime">A pointer to the game's timing values.</param></summary>
+        </member>
+        <member name="M:Bullet.SetTexture(std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;)">
+            <summary>Sets the shared texture of all bullets.
+<param name="assetPath">The location of the asset within the content folder.</param></summary>
+        </member>
+        <member name="T:Bullet">
+            <summary>Class for bullet objects.</summary>
+        </member>
+        <member name="M:GameObject.GetIndex">
+            <summary>Gets the index of the game object for debugging purposes.
+<returns>The game object's index.</returns></summary>
+        </member>
+        <member name="M:GameObject.GetHalfDimensions">
+            <summary>Gets the half-width and half-height of the game object.
+<returns>The half dimensions of the game object.</returns></summary>
+        </member>
+        <member name="M:GameObject.ToString">
+            <summary>Gets a string representation of the game object.
+<returns>The game object's string representation.</returns></summary>
+        </member>
+        <member name="M:GameObject.GetPosition">
+            <summary>Gets a reference to the game object's position.</summary>
+        </member>
+        <member name="M:GameObject.Deactivate">
+            <summary>Deactivates the game object.</summary>
+        </member>
+        <member name="M:GameObject.Activate">
+            <summary>Activates the game object.</summary>
+        </member>
+        <member name="M:GameObject.IsActive">
+            <summary>Used to indicate if the game object is active.
+<returns>True if the game object is active, false otherwise.</returns></summary>
+        </member>
+        <member name="M:GameObject.Draw(GameTime!System.Runtime.CompilerServices.IsConst*)">
+            <summary>Used to reneder the game object.
+<param name="pGameTime">A pointer to the game's timing values.</param></summary>
+        </member>
+        <member name="M:GameObject.Update(GameTime!System.Runtime.CompilerServices.IsConst*)">
+            <summary>Used to update the game object.
+<param name="pGameTime">A pointer to the game's timing values.</param></summary>
+        </member>
+        <member name="M:GameObject.AreObjectsColliding(GameObject*,GameObject*,GameObject.CollisionData*)">
+            <summary>Used to determine if two game objects are colliding.
+<param name="gameObject1">A pointer to the first game object.</param><param name="gameObject2">A pointer to the second game object.</param><param name="pGameTime">A pointer to the collision data struct which contains
+details about the collision.</param><returns>True if the game objects are colliding, false otherwise.</returns></summary>
+        </member>
+        <member name="M:GameObject.SetCurrentLevel(Level*)">
+            <summary>Sets a static reference to the currently loaded level.
+<returns>A pointer to the current level object.</returns></summary>
+        </member>
+        <member name="T:GameObject">
+            <summary>Abstract base class for all game objects.</summary>
+        </member>
+        <member name="M:Game.GetInputState">
+            <summary>Used to retrieve a reference to the game's input data.
+<returns>A reference to the game's input state.</returns></summary>
+        </member>
+        <member name="M:Game.Exit">
+            <summary>Used to exit the game and quit the application.</summary>
+        </member>
+        <member name="M:Game.GetScreenManager">
+            <summary>Used to retrieve a pointer to the game's screen manager.
+<returns>A pointer to the screen manager.</returns></summary>
+        </member>
+        <member name="M:Game.IsContentLoaded">
+            <summary>Used to indicate if the game's content has been loaded.
+<returns>True if the game's content has been loaded, false otherwise.</returns></summary>
+        </member>
+        <member name="M:Game.IsExiting">
+            <summary>Used to indicate if the game is exiting.
+<returns>True if the game is exiting, false otherwise.</returns></summary>
+        </member>
+        <member name="M:Game.Draw">
+            <summary>Used to render the game.</summary>
+        </member>
+        <member name="M:Game.Update">
+            <summary>Used to update the game.</summary>
+        </member>
+        <member name="M:Game.LoadContent">
+            <summary>Used to load the game's content.</summary>
+        </member>
+        <member name="M:Game.GetContentPath(std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;)">
+            <summary>Used to retrieve a game assets full path.
+<returns>The path where game assets are stored within the content directory.</returns><param name="assetPath">The relative path to the asset.</param></summary>
+        </member>
+        <member name="M:Game.GetScreenHeight">
+            <summary>Used to indicate the preferred screen height.
+<returns>The screen height in pixels.</returns></summary>
+        </member>
+        <member name="M:Game.GetScreenWidth">
+            <summary>Used to indicate the preferred screen width.
+<returns>The screen width in pixels.</returns></summary>
+        </member>
+        <member name="M:Game.IsFullScreen">
+            <summary>Used to indicate if the game should run in full-screen mode
+<returns>True if the game is running full-screen and False if in windowed mode</returns></summary>
+        </member>
+        <member name="T:Game">
+            <summary>Container for the core game components, including:
+Timing Values (GameTime), Screen Management (ScreenManager),
+and Input Management (InputState).
+</summary>
+        </member>
+        <member name="M:ScreenManager.AddScreen(Screen*)">
+            <summary>Used to add a screen to be managed.
+<param name="pScreen">A pointer to the screen that you want to be managed.</param></summary>
+        </member>
+        <member name="M:ScreenManager.GetGame">
+            <summary>Used to retrieve a pointer to the current game instance.
+<returns>A pointer to the currently running game.</returns></summary>
+        </member>
+        <member name="M:ScreenManager.InTransition">
+            <summary>Used to indicate if the game is transitioning between two screens.
+<returns>True if the game is transisioning between screens, false otherwise.</returns></summary>
+        </member>
+        <member name="T:ScreenManager">
+            <summary>Manages the updating, rendering, and player input for open screens.</summary>
+        </member>
+        <member name="M:Screen.Exit">
+            <summary>Used to exit the screen.</summary>
+        </member>
+        <member name="M:Screen.Show">
+            <summary>Used to show the screen.</summary>
+        </member>
+        <member name="M:Screen.GetScreenManager">
+            <summary>Used to retrieve a pointer to the game's screen manager.
+<returns>A pointer to the screen manager.</returns></summary>
+        </member>
+        <member name="M:Screen.GetAlpha">
+            <summary>Used to indicate the screen's transparency, based on the transition state
+<returns>A value between 0.0 and 1.0</returns></summary>
+        </member>
+        <member name="M:Screen.NeedsToBeRemoved">
+            <summary>Used to indicate if the screen should be removed from the screen manager,
+because it has fully exited.
+<returns>True if the screen's content has been loaded, false otherwise.</returns></summary>
+        </member>
+        <member name="M:Screen.IsContentLoaded">
+            <summary>Used to indicate if the screen's content has been loaded.
+<returns>True if the screen's content has been loaded, false otherwise.</returns></summary>
+        </member>
+        <member name="M:Screen.IsExiting">
+            <summary>Used to indicate if the screen is exiting.
+<returns>True if the screen is exiting, false otherwise.</returns></summary>
+        </member>
+        <member name="M:Screen.IsPopup">
+            <summary>Used to indicate if the screen has translucency, and the screen below it should
+render.
+<returns>True if the screen is translucent or has transparency, false otherwise.</returns></summary>
+        </member>
+        <member name="M:Screen.UpdateTransition(GameTime!System.Runtime.CompilerServices.IsConst*)">
+            <summary>Used to update the screen's transition values.
+<param name="pGameTime">A pointer to the game's timing values.</param></summary>
+        </member>
+        <member name="M:Screen.Draw(GameTime!System.Runtime.CompilerServices.IsConst*)">
+            <summary>Used to reneder the screen.
+<param name="pGameTime">A pointer to the game's timing values.</param></summary>
+        </member>
+        <member name="M:Screen.Update(GameTime!System.Runtime.CompilerServices.IsConst*)">
+            <summary>Used to update the screen.
+<param name="pGameTime">A pointer to the game's timing values.</param></summary>
+        </member>
+        <member name="M:Screen.HandleInput(InputState*)">
+            <summary>Used to manage what the screen should do based on the user input.
+<param name="pInput">A pointer to the input state.</param></summary>
+        </member>
+        <member name="M:Screen.UnloadContent">
+            <summary>Used to unload the screen's content.</summary>
+        </member>
+        <member name="M:Screen.LoadContent">
+            <summary>Used to load the screen's content.</summary>
+        </member>
+        <member name="T:Screen">
+            <summary>Abstract base class for all screens.</summary>
+        </member>
+        <member name="M:InputState.GetGamePadState(System.Int32!System.Runtime.CompilerServices.IsConst)">
+            <summary>Gets a reference to a specific game pad.
+<param name="gamePadIndex">The index of the game pad.</param><returns>The reference to the indexed game pad.</returns></summary>
+        </member>
+        <member name="M:InputState.GetGamePadIndex(ALLEGRO_JOYSTICK*)">
+            <summary>Gets the index of a game pad.
+<param name="pId">The allegro joystick id.</param><returns>The index of a game pad.</returns></summary>
+        </member>
+        <member name="M:InputState.UpdateButtonEvent(ALLEGRO_EVENT,ButtonState)">
+            <summary>Handles updating the gamepad axies.</summary>
+        </member>
+        <member name="M:InputState.UpdateAxisEvent(ALLEGRO_EVENT)">
+            <summary>Handles updating the gamepad axies.</summary>
+        </member>
+        <member name="M:InputState.UpdateConfigurationEvent">
+            <summary>Handles updating the gamepad configuration.</summary>
+        </member>
+        <member name="M:InputState.IsNewButtonPress(Buttons,System.Int32*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,System.Int32)">
+            <summary>Used to indicate if a button has just been released.
+<param name="button">The button to test.</param><param name="indexOut">A reference to the controller who's button was just
+released.</param><param name="controllingIndex">The controller index (0-3) to test. Use -1 to test all
+controllers</param><returns>True if the button was just released, false otherwise.</returns></summary>
+        </member>
+        <member name="M:InputState.IsButtonUp(Buttons,System.Int32*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,System.Int32)">
+            <summary>Used to indicate if a button is not being pressed.
+<param name="button">The button to test.</param><param name="indexOut">A reference to the controller who's button was up.</param><param name="controllingIndex">The controller index (0-3) to test. Use -1 to test all
+controllers</param><returns>True if the button is up, false otherwise.</returns></summary>
+        </member>
+        <member name="M:InputState.IsButtonDown(Buttons,System.Int32*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,System.Int32)">
+            <summary>Used to indicate if a button is being held down.
+<param name="button">The button to test.</param><param name="indexOut">A reference to the controller who's button was held down.</param><param name="controllingIndex">The controller index (0-3) to test. Use -1 to test all
+controllers</param><returns>True if the button is down, false otherwise.</returns></summary>
+        </member>
+        <member name="M:InputState.IsNewKeyPress(System.Int32!System.Runtime.CompilerServices.IsConst)">
+            <summary>Used to indicate if a key has just been released.
+<param name="key">The key to test.</param><returns>True if the key was just released, false otherwise.</returns></summary>
+        </member>
+        <member name="M:InputState.IsKeyUp(System.Int32!System.Runtime.CompilerServices.IsConst)">
+            <summary>Used to indicate if a key is not being held down.
+<param name="key">The key to test.</param><returns>True if the key is up, false otherwise.</returns></summary>
+        </member>
+        <member name="M:InputState.IsKeyDown(System.Int32!System.Runtime.CompilerServices.IsConst)">
+            <summary>Used to indicate if a key is being held down.
+<param name="key">The key to test.</param><returns>True if the key is down, false otherwise.</returns></summary>
+        </member>
+        <member name="T:InputState">
+            <summary>Class that contains the state of various player input
+devices. Currently the keyboard, and up to four game pads.
+</summary>
+        </member>
+        <member name="M:Vector2.Lerp(Vector2!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,Vector2!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,System.Single)">
+            <summary>Used to linearly interpolate between two vectors.
+<param name="start">The starting vector.</param><param name="end">The ending vector.</param><param name="value">The interpolation position from 0.0 to 1.0.</param><returns>The interpolated vector between start and end.</returns></summary>
+        </member>
+        <member name="M:Vector2.DistanceSquared(Vector2!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,Vector2!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>Calculates the squared distance between two vectors.
+<param name="v1">A reference to the first vector.</param><param name="v2">A reference to the second vector.</param><returns>The distance between the vectors squared.</returns></summary>
+        </member>
+        <member name="M:Vector2.Distance(Vector2!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced,Vector2!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>Calculates the distance between two vectors.
+<param name="v1">A reference to the first vector.</param><param name="v2">A reference to the second vector.</param><returns>The distance between the vectors.</returns></summary>
+        </member>
+        <member name="M:Vector2.Zero">
+            <summary>A vector with both components set to zero.
+<returns>A zero vector.</returns></summary>
+        </member>
+        <member name="M:Vector2.CrossProduct(Vector2!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>Calculates the cross product between this vector and another.
+<param name="v2">A reference to the vector to cross.</param><returns>The cross product.</returns></summary>
+        </member>
+        <member name="M:Vector2.DotProduct(Vector2!System.Runtime.CompilerServices.IsConst*!System.Runtime.CompilerServices.IsImplicitlyDereferenced)">
+            <summary>Calculates the dot product between this vector and another.
+<param name="v2">A reference to the vector to dot.</param><returns>The dot product.</returns></summary>
+        </member>
+        <member name="M:Vector2.Normalize">
+            <summary>Used to resize the vector to a length of one.</summary>
+        </member>
+        <member name="M:Vector2.Set(Vector2!System.Runtime.CompilerServices.IsConst)">
+            <summary>Sets the vector's components to match those of another vector.
+<param name="vector">The vector whos components to copy.</param></summary>
+        </member>
+        <member name="M:Vector2.Set(System.Single!System.Runtime.CompilerServices.IsConst,System.Single!System.Runtime.CompilerServices.IsConst)">
+            <summary>Sets the vector's components.
+<param name="x">The new x component.</param><param name="y">The new y component.</param></summary>
+        </member>
+        <member name="M:Vector2.LengthSquared">
+            <summary>Used to calculate the squared length of the vector.
+<returns>The length of the vector squared.</returns></summary>
+        </member>
+        <member name="M:Vector2.Length">
+            <summary>Used to calculate the length of the vector.
+<returns>The length of the vector.</returns></summary>
+        </member>
+        <member name="T:Vector2">
+            <summary>Class for two-dimensional vectors.</summary>
+        </member>
+        <member name="M:GameTime.GetTotalTime">
+            <summary>Gets the time since the game started.
+<returns>The amount of time, in seconds, since the game started.</returns></summary>
+        </member>
+        <member name="M:GameTime.GetTimeElapsed">
+            <summary>Gets the elapsed time since last frame.
+<returns>The amount of time, in seconds, since the last frame.</returns></summary>
+        </member>
+        <member name="T:GameTime">
+            <summary>Class for managing the game's timing values.</summary>
+        </member>
+        <!-- Discarding badly formed XML document comment for member 'M:MenuScreen.HandleInput(InputState*)'. -->
+        <!-- Discarding badly formed XML document comment for member 'M:MenuScreen.Draw(GameTime!System.Runtime.CompilerServices.IsConst*)'. -->
+        <!-- Discarding badly formed XML document comment for member 'M:MenuScreen.SetItemListWrapping(System.Boolean!System.Runtime.CompilerServices.IsConst)'. -->
+        <!-- Discarding badly formed XML document comment for member 'M:Math.Lerp(System.Single!System.Runtime.CompilerServices.IsConst,System.Single!System.Runtime.CompilerServices.IsConst,System.Single)'. -->
+        <!-- Discarding badly formed XML document comment for member 'M:Math.Lerp(System.Single!System.Runtime.CompilerServices.IsConst,System.Single!System.Runtime.CompilerServices.IsConst,System.Single)'. -->
+        <!-- Discarding badly formed XML document comment for member 'M:MenuScreen.HandleInput(InputState*)'. -->
+        <!-- Discarding badly formed XML document comment for member 'M:MenuScreen.Draw(GameTime!System.Runtime.CompilerServices.IsConst*)'. -->
+        <!-- Discarding badly formed XML document comment for member 'M:MenuScreen.SetItemListWrapping(System.Boolean!System.Runtime.CompilerServices.IsConst)'. -->
+        <!-- Discarding badly formed XML document comment for member 'M:MenuScreen.HandleInput(InputState*)'. -->
+        <!-- Discarding badly formed XML document comment for member 'M:MenuScreen.Draw(GameTime!System.Runtime.CompilerServices.IsConst*)'. -->
+        <!-- Discarding badly formed XML document comment for member 'M:MenuScreen.SetItemListWrapping(System.Boolean!System.Runtime.CompilerServices.IsConst)'. -->
+        <!-- Discarding badly formed XML document comment for member 'M:GameTime.GetTimeElapsed'. -->
+        <!-- Discarding badly formed XML document comment for member 'M:GameTime.GetTotalTime'. -->
+    </members>
+</doc>

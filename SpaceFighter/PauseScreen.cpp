@@ -18,8 +18,7 @@
 
 PauseScreen::PauseScreen()
 {
-	std::string fontPath = Game::GetContentDirectory();
-	fontPath.append("Fonts\\arialbd.ttf");
+	std::string fontPath = Game::GetContentPath("Fonts\\arialbd.ttf");
 	m_pFont = al_load_ttf_font(fontPath.c_str(), 20, 0);
 }
 

@@ -6,7 +6,7 @@
 					 9/17/14
 
 					 
- BioEnemySmall.cpp: Source file for the small enemy
+ SmallBioEnemy.cpp: Source file for the small enemy
  bio-mechanical ship.
 
 ------------------------------------------------- */
@@ -14,12 +14,12 @@
 
 #include <iostream>
 
-#include "BioEnemySmall.h"
+#include "SmallBioEnemy.h"
 
-ALLEGRO_BITMAP *BioEnemySmall::s_pTexture = nullptr;
-Vector2 BioEnemySmall::s_textureOrigin = Vector2::Zero();
+ALLEGRO_BITMAP *SmallBioEnemy::s_pTexture = nullptr;
+Vector2 SmallBioEnemy::s_textureOrigin = Vector2::Zero();
 
-BioEnemySmall::BioEnemySmall()
+SmallBioEnemy::SmallBioEnemy()
 {
 	// Set starting attributes
 	m_position.X = Game::GetScreenWidth() / 2;
@@ -31,14 +31,11 @@ BioEnemySmall::BioEnemySmall()
 	m_collisionRadius = 20.0f;
 }
 
-void BioEnemySmall::SetTexture(std::string assetPath)
+void SmallBioEnemy::SetTexture(std::string assetPath)
 {
 	ALLEGRO_BITMAP *pTemp = nullptr;
-	
-	std::string path = Game::GetContentDirectory();
-	path.append(assetPath);
 
-	pTemp = al_load_bitmap(path.c_str());
+	pTemp = al_load_bitmap(Game::GetContentPath(assetPath).c_str());
 	if (pTemp)
 	{
 		s_pTexture = pTemp;
@@ -47,7 +44,7 @@ void BioEnemySmall::SetTexture(std::string assetPath)
 	}
 }
 
-void BioEnemySmall::Update(const GameTime *pGameTime)
+void SmallBioEnemy::Update(const GameTime *pGameTime)
 {
 	if (IsActive())
 	{
@@ -62,7 +59,7 @@ void BioEnemySmall::Update(const GameTime *pGameTime)
 	EnemyShip::Update(pGameTime);
 }
 
-void BioEnemySmall::Draw(const GameTime *pGameTime)
+void SmallBioEnemy::Draw(const GameTime *pGameTime)
 {
 	if (s_pTexture)
 	{

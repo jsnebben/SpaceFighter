@@ -18,11 +18,14 @@
 Level_1::Level_1()
 {
 	srand(time(nullptr)); // initialize random seed
+}
 
-	for (unsigned int i = 0; i < NUM_ENEMYBIOSMALL; i++)
+void Level_1::InitializeEnemies()
+{
+	for (unsigned int i = 0; i < NUM_SMALLBIOENEMIES; i++)
 	{
-		ResetEnemy(&m_bioSmalls[i]);
-		AddGameObject(&m_bioSmalls[i]);
+		ResetEnemy(&m_smallBios[i]);
+		AddGameObject(&m_smallBios[i]);
 	}
 }
 
@@ -30,11 +33,11 @@ void Level_1::Update(const GameTime *pGameTime)
 {
 	Level::Update(pGameTime);
 
-	for (unsigned int i = 0; i < NUM_ENEMYBIOSMALL; i++)
+	for (unsigned int i = 0; i < NUM_SMALLBIOENEMIES; i++)
 	{
-		if (!m_bioSmalls[i].IsActive() && m_bioSmalls[i].GetDelaySeconds() <= 0)
+		if (!m_smallBios[i].IsActive() && m_smallBios[i].GetDelaySeconds() <= 0)
 		{
-			ResetEnemy(&m_bioSmalls[i]);
+			ResetEnemy(&m_smallBios[i]);
 		}
 	}
 }

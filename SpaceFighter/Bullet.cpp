@@ -69,11 +69,8 @@ void Bullet::Activate(Vector2 position, bool isShotByPlayer)
 void Bullet::SetTexture(std::string assetPath)
 {
 	ALLEGRO_BITMAP *pTemp = nullptr;
-	
-	std::string path = Game::GetContentDirectory();
-	path.append(assetPath);
 
-	pTemp = al_load_bitmap(path.c_str());
+	pTemp = al_load_bitmap(Game::GetContentPath(assetPath).c_str());
 	if (pTemp)
 	{
 		s_pTexture = pTemp;

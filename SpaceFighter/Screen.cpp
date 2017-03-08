@@ -82,9 +82,6 @@ void Screen::UpdateTransition(const GameTime *pGameTime)
 	}
 }
 
-void Screen::Draw(const GameTime *pGameTime)
-{ }
-
 void Screen::SetScreenManager(ScreenManager *pScreenManager)
 {
 	m_pScreenManager = pScreenManager;

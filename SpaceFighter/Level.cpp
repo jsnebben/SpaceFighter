@@ -13,7 +13,6 @@
 
 #include "Level.h"
 #include "Bullet.h"
-#include "Math.h"
 
 Level *Level::s_pCurrentLevel = nullptr;
 
@@ -44,6 +43,8 @@ Level::~Level()
 
 void Level::LoadContent()
 {
+	InitializeEnemies();
+
 	for (unsigned int i = 0; i < 100; i++)
 	{
 		Bullet *pBullet = new Bullet;
@@ -54,28 +55,7 @@ void Level::LoadContent()
 
 void Level::HandleInput(InputState *pInput)
 {
-	Vector2 direction = Vector2::Zero();
-	if (pInput->IsKeyDown(ALLEGRO_KEY_DOWN)) direction.Y++;
-	if (pInput->IsKeyDown(ALLEGRO_KEY_UP)) direction.Y--;
-	if (pInput->IsKeyDown(ALLEGRO_KEY_RIGHT)) direction.X++;
-	if (pInput->IsKeyDown(ALLEGRO_KEY_LEFT)) direction.X--;
-
-	// Normalize the direction
-	if (direction.X != 0 && direction.Y != 0)
-	{
-		direction *= Math::NORMALIZE_ANGLE;
-	}
-
-	// gamepad overrides keyboard input
-	//Vector2 thumbstick = pInput->GetGamePadState(0).Thumbsticks.Left;
-	//if (thumbstick != Vector2::Zero()) direction = thumbstick;
-
-	m_playerShip.SetDesiredDirection(direction);
-	
-	if (pInput->IsKeyDown(ALLEGRO_KEY_SPACE))
-	{
-		m_playerShip.Fire();
-	}
+	m_playerShip.HandleInput(pInput);
 }
 
 void Level::Update(const GameTime *pGameTime)

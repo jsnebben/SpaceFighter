@@ -67,8 +67,7 @@ int main(int argc, char *argv[])
 	al_init_ttf_addon();
 	al_init_image_addon();
 
-	std::string fontPath = Game::GetContentDirectory();
-	fontPath.append("Fonts\\arial.ttf");
+	std::string fontPath = Game::GetContentPath("Fonts\\arial.ttf");
 	ALLEGRO_FONT *pFont = al_load_ttf_font(fontPath.c_str(), 12, 0);
 	
 	double targetFramesPerSec = 60.0;

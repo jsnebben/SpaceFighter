@@ -14,6 +14,7 @@
 
 #pragma once
 
+/// <summary>Helper class for common math functions and constants.</summary>
 class Math
 {
 public:
@@ -21,6 +22,12 @@ public:
 	static const float PI;
 	static const float NORMALIZE_ANGLE;
 
-	static float Lerp(const float f1, const float f2, float value);
+	/// <summary>Used to linearly interpolate between two floating point values.
+	/// <param name="start">The starting value.</param>
+	/// <param name="end">The ending value.</param>
+	/// <param name="value">The interpolation position from 0.0 to 1.0.</param>
+	/// <returns>The interpolated value between start and end.<returns>
+	/// </summary>
+	static float Lerp(const float start, const float end, float value);
 
 };

@@ -16,6 +16,8 @@
 
 #include <allegro5\allegro.h>
 
+
+/// <summary>Class for managing the game's timing values.</summary>
 class GameTime
 {
 	friend class Game;
@@ -25,10 +27,15 @@ public:
 	GameTime();
 	~GameTime() { }
 
-	// Gets the time in seconds since last frame.
+
+	/// <summary>Gets the elapsed time since last frame.
+	/// <returns>The amount of time, in seconds, since the last frame.</returns>
+	/// </summary>
 	double GetTimeElapsed() const { return m_elapsedTime; }
 
-	// Gets the time in seconds since the game started.
+	/// <summary>Gets the time since the game started.
+	/// <returns>The amount of time, in seconds, since the game started.</returns>
+	/// </summary>
 	double GetTotalTime() const { return m_currentTotalTime; }
 
 

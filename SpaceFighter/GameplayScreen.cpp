@@ -39,10 +39,9 @@ void GameplayScreen::LoadContent()
 	// Load Static Content
 	PlayerShip::SetTexture("Textures\\PlayerShip.png");
 	Bullet::SetTexture("Textures\\Bullet.png");
+	SmallBioEnemy::SetTexture("Textures\\BioEnemySmall.png");
+	
 
-	BioEnemySmall::SetTexture("Textures\\BioEnemySmall.png");
-	
-	
 	m_pLevel->LoadContent();
 	
 	Screen::LoadContent();
@@ -83,7 +82,5 @@ void GameplayScreen::Draw(const GameTime *pGameTime)
 	if (!this->NeedsToBeRemoved())
 	{
 		m_pLevel->Draw(pGameTime);
-
-		Screen::Draw(pGameTime);
 	}
 }

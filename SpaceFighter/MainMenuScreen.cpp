@@ -57,10 +57,7 @@ void MainMenuScreen::LoadContent()
 	// Setup for the game logo
 	ALLEGRO_BITMAP *pTemp = nullptr;
 
-	std::string path = Game::GetContentDirectory();
-	path.append("Textures\\Logo.png");
-
-	pTemp = al_load_bitmap(path.c_str());
+	pTemp = al_load_bitmap(Game::GetContentPath("Textures\\Logo.png").c_str());
 	if (pTemp)
 	{
 		m_pTexture = pTemp;

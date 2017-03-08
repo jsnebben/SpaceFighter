@@ -71,3 +71,10 @@ void Game::SetContentPath(const char *pFolder)
 	s_contentDirectory.append(pFolder);
 	s_contentDirectory.append("\\");
 }
+
+
+std::string Game::GetContentPath(std::string assetPath)
+{
+	assetPath.insert(0, s_contentDirectory);
+	return assetPath;
+}

@@ -12,6 +12,7 @@
 
 
 #include "PlayerShip.h"
+#include "Math.h"
 
 ALLEGRO_BITMAP *PlayerShip::s_pTexture = nullptr;
 Vector2 PlayerShip::s_textureOrigin = Vector2::Zero();
@@ -36,17 +37,37 @@ PlayerShip::PlayerShip()
 void PlayerShip::SetTexture(std::string assetPath)
 {
 	ALLEGRO_BITMAP *pTemp = nullptr;
-	
-	std::string path = Game::GetContentDirectory();
-	path.append(assetPath);
 
-	pTemp = al_load_bitmap(path.c_str());
+	pTemp = al_load_bitmap(Game::GetContentPath(assetPath).c_str());
 	if (pTemp)
 	{
 		s_pTexture = pTemp;
 		s_textureOrigin.X = al_get_bitmap_width(s_pTexture) / 2;
 		s_textureOrigin.Y = al_get_bitmap_height(s_pTexture) / 2;
 	}
+}
+
+void PlayerShip::HandleInput(InputState *pInput)
+{
+	Vector2 direction = Vector2::Zero();
+
+	if (pInput->IsKeyDown(ALLEGRO_KEY_DOWN)) direction.Y++;
+	if (pInput->IsKeyDown(ALLEGRO_KEY_UP)) direction.Y--;
+	if (pInput->IsKeyDown(ALLEGRO_KEY_RIGHT)) direction.X++;
+	if (pInput->IsKeyDown(ALLEGRO_KEY_LEFT)) direction.X--;
+
+	// Normalize the direction
+	if (direction.X != 0 && direction.Y != 0)
+	{
+		direction *= Math::NORMALIZE_ANGLE;
+	}
+
+	// gamepad overrides keyboard input
+	//direction = pInput->GetGamePadState(0).Thumbsticks.Left; // already normalized
+	
+	SetDesiredDirection(direction);
+	
+	if (pInput->IsKeyDown(ALLEGRO_KEY_SPACE)) Fire();
 }
 
 void PlayerShip::Update(const GameTime *pGameTime)

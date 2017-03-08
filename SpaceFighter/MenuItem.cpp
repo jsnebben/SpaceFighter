@@ -19,9 +19,8 @@ MenuItem::MenuItem()
 {
 	OnSelect = nullptr;
 
-	std::string fontPath = Game::GetContentDirectory();
-	fontPath.append("Fonts\\arialbd.ttf");
-	m_pFont = al_load_ttf_font(fontPath.c_str(), 20, 0);
+	std::string path = Game::GetContentPath("Fonts\\arialbd.ttf");
+	m_pFont = al_load_ttf_font(path.c_str(), 20, 0);
 
 	m_color = al_map_rgb(255, 255, 255);
 	m_alpha = 1.0f;

@@ -20,24 +20,24 @@ Vector2::Vector2(const float x, const float y)
     Y = y;
 }
 
-float Vector2::DistanceSquared() const
+float Vector2::LengthSquared() const
 {
 	return ((X * X) + (Y * Y));
 }
 
-float Vector2::Distance() const
+float Vector2::Length() const
 {
     return sqrtf(X * X + Y * Y);
 }
  
 void Vector2::Normalize()
 {
-    float dist = Distance();
+    float len = Length();
  
-    if(dist != 0)
+    if(len != 0)
     {
-        X /= dist;
-        Y /= dist;
+        X /= len;
+        Y /= len;
     }
 }
 
@@ -70,7 +70,12 @@ Vector2 Vector2::Zero()
 
 float Vector2::Distance(const Vector2 &v1, const Vector2 &v2)
 {
-    return sqrtf((float)(pow((v2.X - v1.X), 2 ) + pow((v2.Y - v1.Y), 2)));
+    return sqrtf(DistanceSquared(v1, v2));
+}
+
+float Vector2::DistanceSquared(const Vector2 &v1, const Vector2 &v2)
+{
+	return (float)(pow((v2.X - v1.X), 2) + pow((v2.Y - v1.Y), 2));
 }
 
 Vector2 Vector2::Lerp(const Vector2 &v1, const Vector2 &v2, float value)

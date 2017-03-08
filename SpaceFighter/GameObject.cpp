@@ -29,11 +29,11 @@ GameObject::GameObject()
 bool GameObject::AreObjectsColliding(GameObject *pGameObject1, GameObject *pGameObject2, CollisionData *pData)
 {
 	// Math
-	Vector2 difference = pGameObject1->m_position - pGameObject2->m_position;
+	float distanceSquared = Vector2::DistanceSquared(pGameObject1->m_position, pGameObject2->m_position);
 	float radiiSum = pGameObject1->m_collisionRadius + pGameObject2->m_collisionRadius;
 	float radiiSumSquared = radiiSum * radiiSum;
 
-	if (difference.DistanceSquared() <= radiiSumSquared)
+	if (distanceSquared <= radiiSumSquared)
 	{
 		PlayerShip *pPlayerShip = dynamic_cast<PlayerShip *>(pGameObject1);
 		EnemyShip *pEnemyShip;
