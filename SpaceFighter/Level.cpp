@@ -133,7 +133,7 @@ void Level::UpdateSectorPosition(GameObject *pGameObject)
 	{
 		for (int y = minY; y <= maxY; y++)
 		{
-			int index = y * (int)m_sectorCount.Y + x;
+			int index = y * (int)m_sectorCount.X + x;
 
 			m_pSectors[index].push_back(pGameObject);
 		}
