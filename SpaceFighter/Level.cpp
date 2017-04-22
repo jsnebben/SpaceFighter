@@ -124,7 +124,7 @@ void Level::UpdateSectorPosition(GameObject *pGameObject)
 	int minY = (int)(position.Y - halfDimensions.Y) / (int)m_sectorSize.Y;
 	int maxY = (int)(position.Y + halfDimensions.Y) / (int)m_sectorSize.Y;
 
-	if (minX < 0 || maxX > m_sectorCount.X || minY < 0 || maxY > m_sectorCount.Y)
+	if (minX < 0 || maxX >= m_sectorCount.X || minY < 0 || maxY >= m_sectorCount.Y)
 	{
 		return;
 	}
