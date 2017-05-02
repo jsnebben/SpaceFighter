@@ -88,6 +88,7 @@ private:
 	// game objects
 	PlayerShip m_playerShip;
 	std::vector<Bullet *> m_bullets;
+	std::vector<Bullet2 *> m_bullets2;
 	std::vector<GameObject *> m_gameObjects;
 
 	virtual void CheckCollisions(std::vector<GameObject *> &sector);

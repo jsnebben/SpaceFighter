@@ -261,6 +261,33 @@ sector position updated.</param></summary>
         <member name="T:Ship">
             <summary>Abstract base class for all ships.</summary>
         </member>
+        <member name="M:Bullet2.ToString">
+            <summary>Gets a string representation of the game object.
+<returns>The game object's string representation.</returns></summary>
+        </member>
+        <member name="M:Bullet2.GetDamage">
+            <summary>Gets the dammage that the bullet inflicts.
+<returns>The damage value that the bullet inflicts.</returns></summary>
+        </member>
+        <member name="M:Bullet2.Activate(Vector2,System.Boolean)">
+            <summary>Activates the bullet.
+<param name="position">The position where the bullet should start.</param><param name="isShotByPlayer">Specifies if the player ship shot the bullet.</param></summary>
+        </member>
+        <member name="M:Bullet2.Draw(GameTime!System.Runtime.CompilerServices.IsConst*)">
+            <summary>Used to reneder the bullet.
+<param name="pGameTime">A pointer to the game's timing values.</param></summary>
+        </member>
+        <member name="M:Bullet2.Update(GameTime!System.Runtime.CompilerServices.IsConst*)">
+            <summary>Used to update the screen.
+<param name="pGameTime">A pointer to the game's timing values.</param></summary>
+        </member>
+        <member name="M:Bullet2.SetTexture(std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;)">
+            <summary>Sets the shared texture of all bullets.
+<param name="assetPath">The location of the asset within the content folder.</param></summary>
+        </member>
+        <member name="T:Bullet2">
+            <summary>Class for bullet2 objects.</summary>
+        </member>
         <member name="M:Bullet.ToString">
             <summary>Gets a string representation of the game object.
 <returns>The game object's string representation.</returns></summary>

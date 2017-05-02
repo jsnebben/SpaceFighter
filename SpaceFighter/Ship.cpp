@@ -26,6 +26,7 @@ Ship::Ship()
 	m_baseHitPoints = 3.0f;
 
 	m_pBullets = nullptr;
+	m_pBullets2 = nullptr;
 
 	m_isInvulnurable = false;
 
@@ -46,6 +47,22 @@ Bullet *Ship::GetInactiveBullet()
 			if (!(*m_pBullets)[i]->IsActive())
 			{
 				return (*m_pBullets)[i];
+			}
+		}
+	}
+
+	return nullptr;
+}
+
+Bullet2 *Ship::GetInactiveBullet2()
+{
+	if (m_pBullets2)
+	{
+		for (unsigned int i = 0; i < m_pBullets2->size(); i++)
+		{
+			if (!(*m_pBullets2)[i]->IsActive())
+			{
+				return (*m_pBullets2)[i];
 			}
 		}
 	}

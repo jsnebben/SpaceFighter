@@ -385,38 +385,72 @@ details about the collision.</param>
 <returns>The game object's string representation.</returns>
 </summary>
 </member>
-<member name="T:Ship" decl="false" source="c:\users\300016613\desktop\spacefighter\spacefighter\ship.h" line="20">
+<member name="T:Bullet2" decl="false" source="c:\users\300016613\desktop\spacefighter\spacefighter\bullet2.h" line="19">
+<summary>Class for bullet2 objects.</summary>
+</member>
+<member name="M:Bullet2.SetTexture(std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;)" decl="true" source="c:\users\300016613\desktop\spacefighter\spacefighter\bullet2.h" line="27">
+<summary>Sets the shared texture of all bullets.
+<param name="assetPath">The location of the asset within the content folder.</param>
+</summary>
+</member>
+<member name="M:Bullet2.Update(GameTime!System.Runtime.CompilerServices.IsConst*)" decl="true" source="c:\users\300016613\desktop\spacefighter\spacefighter\bullet2.h" line="32">
+<summary>Used to update the screen.
+<param name="pGameTime">A pointer to the game's timing values.</param>
+</summary>
+</member>
+<member name="M:Bullet2.Draw(GameTime!System.Runtime.CompilerServices.IsConst*)" decl="true" source="c:\users\300016613\desktop\spacefighter\spacefighter\bullet2.h" line="37">
+<summary>Used to reneder the bullet.
+<param name="pGameTime">A pointer to the game's timing values.</param>
+</summary>
+</member>
+<member name="M:Bullet2.Activate(Vector2,System.Boolean)" decl="true" source="c:\users\300016613\desktop\spacefighter\spacefighter\bullet2.h" line="42">
+<summary>Activates the bullet.
+<param name="position">The position where the bullet should start.</param>
+<param name="isShotByPlayer">Specifies if the player ship shot the bullet.</param>
+</summary>
+</member>
+<member name="M:Bullet2.GetDamage" decl="false" source="c:\users\300016613\desktop\spacefighter\spacefighter\bullet2.h" line="48">
+<summary>Gets the dammage that the bullet inflicts.
+<returns>The damage value that the bullet inflicts.</returns>
+</summary>
+</member>
+<member name="M:Bullet2.ToString" decl="false" source="c:\users\300016613\desktop\spacefighter\spacefighter\bullet2.h" line="53">
+<summary>Gets a string representation of the game object.
+<returns>The game object's string representation.</returns>
+</summary>
+</member>
+<member name="T:Ship" decl="false" source="c:\users\300016613\desktop\spacefighter\spacefighter\ship.h" line="21">
 <summary>Abstract base class for all ships.</summary>
 </member>
-<member name="M:Ship.Update(GameTime!System.Runtime.CompilerServices.IsConst*)" decl="true" source="c:\users\300016613\desktop\spacefighter\spacefighter\ship.h" line="30">
+<member name="M:Ship.Update(GameTime!System.Runtime.CompilerServices.IsConst*)" decl="true" source="c:\users\300016613\desktop\spacefighter\spacefighter\ship.h" line="31">
 <summary>Used to update the ship.
 <param name="pGameTime">A pointer to the game's timing values.</param>
 </summary>
 </member>
-<member name="M:Ship.Draw(GameTime!System.Runtime.CompilerServices.IsConst*)" decl="false" source="c:\users\300016613\desktop\spacefighter\spacefighter\ship.h" line="35">
+<member name="M:Ship.Draw(GameTime!System.Runtime.CompilerServices.IsConst*)" decl="false" source="c:\users\300016613\desktop\spacefighter\spacefighter\ship.h" line="36">
 <summary>Used to reneder the ship.
 <param name="pGameTime">A pointer to the game's timing values.</param>
 </summary>
 </member>
-<member name="M:Ship.Fire" decl="false" source="c:\users\300016613\desktop\spacefighter\spacefighter\ship.h" line="40">
+<member name="M:Ship.Fire" decl="false" source="c:\users\300016613\desktop\spacefighter\spacefighter\ship.h" line="41">
 <summary>Used to make the ship fire it's weapon.</summary>
 </member>
-<member name="M:Ship.SetBulletPool(std.vector&lt;Bullet**,std.allocator&lt;Bullet**&gt;&gt;*)" decl="false" source="c:\users\300016613\desktop\spacefighter\spacefighter\ship.h" line="43">
+<member name="M:Ship.SetBulletPool(std.vector&lt;Bullet**,std.allocator&lt;Bullet**&gt;&gt;*)" decl="false" source="c:\users\300016613\desktop\spacefighter\spacefighter\ship.h" line="44">
 <summary>Sets the pool from where the bullets can be reused, when firing.
 <param name="pBullets">A vector of bullet poiners that can be reused.</param>
 </summary>
 </member>
-<member name="M:Ship.Hit(System.Single!System.Runtime.CompilerServices.IsConst)" decl="true" source="c:\users\300016613\desktop\spacefighter\spacefighter\ship.h" line="48">
+<member name="M:Ship.Hit(System.Single!System.Runtime.CompilerServices.IsConst)" decl="true" source="c:\users\300016613\desktop\spacefighter\spacefighter\ship.h" line="49">
 <summary>Used to inflict damage when a ship is hit.
 <param name="damage">A the amount of damage to inflict.</param>
 </summary>
 </member>
-<member name="M:Ship.IsInvulnurable" decl="false" source="c:\users\300016613\desktop\spacefighter\spacefighter\ship.h" line="53">
+<member name="M:Ship.IsInvulnurable" decl="false" source="c:\users\300016613\desktop\spacefighter\spacefighter\ship.h" line="54">
 <summary>Used to indicate if a ship can take damage.
 <returns>True if the ship is invulnurable (cannot take damage), false otherwise.</returns>
 </summary>
 </member>
-<member name="M:Ship.ToString" decl="false" source="c:\users\300016613\desktop\spacefighter\spacefighter\ship.h" line="58">
+<member name="M:Ship.ToString" decl="false" source="c:\users\300016613\desktop\spacefighter\spacefighter\ship.h" line="59">
 <summary>Gets a string representation of the game object.
 <returns>The game object's string representation.</returns>
 </summary>
@@ -447,17 +481,17 @@ details about the collision.</param>
 <member name="M:PlayerShip.Fire" decl="true" source="c:\users\300016613\desktop\spacefighter\spacefighter\playership.h" line="48">
 <summary>Used to make the player ship fire it's weapon.</summary>
 </member>
-<member name="M:PlayerShip.CanFire" decl="false" source="c:\users\300016613\desktop\spacefighter\spacefighter\playership.h" line="51">
+<member name="M:PlayerShip.CanFire" decl="false" source="c:\users\300016613\desktop\spacefighter\spacefighter\playership.h" line="52">
 <summary>Used to indicate if the player ship is ready to fire.
 <returns>True if the ship is ready to fire, false otherwise.</returns>
 </summary>
 </member>
-<member name="M:PlayerShip.ToString" decl="false" source="c:\users\300016613\desktop\spacefighter\spacefighter\playership.h" line="56">
+<member name="M:PlayerShip.ToString" decl="false" source="c:\users\300016613\desktop\spacefighter\spacefighter\playership.h" line="57">
 <summary>Gets a string representation of the game object.
 <returns>The game object's string representation.</returns>
 </summary>
 </member>
-<member name="M:PlayerShip.GetHalfDimensions" decl="false" source="c:\users\300016613\desktop\spacefighter\spacefighter\playership.h" line="61">
+<member name="M:PlayerShip.GetHalfDimensions" decl="false" source="c:\users\300016613\desktop\spacefighter\spacefighter\playership.h" line="62">
 <summary>Gets the half-width and half-height of the game object.
 <returns>The half dimensions of the game object.</returns>
 </summary>

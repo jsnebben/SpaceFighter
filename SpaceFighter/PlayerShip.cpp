@@ -68,6 +68,7 @@ void PlayerShip::HandleInput(InputState *pInput)
 	SetDesiredDirection(direction);
 	
 	if (pInput->IsKeyDown(ALLEGRO_KEY_SPACE)) Fire();
+	if (pInput->IsKeyDown(ALLEGRO_KEY_V)) Fire2();
 }
 
 void PlayerShip::Update(const GameTime *pGameTime)
@@ -110,6 +111,20 @@ void PlayerShip::Fire()
 		if (pBullet)
 		{
 			pBullet->Activate(m_position + m_gunOffset);
+			m_coolDownTime = m_maxCoolDownTime;
+		}
+	}
+}
+
+void PlayerShip::Fire2()
+{
+	if (IsActive() && CanFire())
+	{
+		Bullet2 *pBullet2 = GetInactiveBullet2();
+		
+		if (pBullet2)
+		{
+			pBullet2->Activate(m_position + m_gunOffset);
 			m_coolDownTime = m_maxCoolDownTime;
 		}
 	}

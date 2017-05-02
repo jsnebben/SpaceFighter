@@ -47,6 +47,7 @@ public:
 
 	/// <summary>Used to make the player ship fire it's weapon.</summary>
 	virtual void Fire();
+	virtual void Fire2();
 	
 	///<summary>Used to indicate if the player ship is ready to fire.
 	/// <returns>True if the ship is ready to fire, false otherwise.</returns>

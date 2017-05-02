@@ -32,6 +32,7 @@ Level::Level()
 
 	AddGameObject(&m_playerShip);
 	m_playerShip.SetBulletPool(&m_bullets);
+	m_playerShip.SetBulletPool2(&m_bullets2);
 }
 
 Level::~Level()
@@ -50,6 +51,10 @@ void Level::LoadContent()
 		Bullet *pBullet = new Bullet;
 		m_bullets.push_back(pBullet);
 		m_gameObjects.push_back(pBullet);
+
+		Bullet2 *pBullet2 = new Bullet2;
+		m_bullets2.push_back(pBullet2);
+		m_gameObjects.push_back(pBullet2);
 	}
 }
 

@@ -18,6 +18,7 @@
 #include "Game.h"
 #include "PlayerShip.h"
 #include "Bullet.h"
+#include "Bullet2.h"
 #include "Level_1.h"
 
 
@@ -39,6 +40,7 @@ void GameplayScreen::LoadContent()
 	// Load Static Content
 	PlayerShip::SetTexture("Textures\\PlayerShip.png");
 	Bullet::SetTexture("Textures\\Bullet.png");
+	Bullet2::SetTexture("Textures\\Bullet2.png");
 	SmallBioEnemy::SetTexture("Textures\\BioEnemySmall.png");
 	
 

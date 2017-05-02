@@ -15,6 +15,7 @@
 
 #include "GameObject.h"
 #include "Bullet.h"
+#include "Bullet2.h"
 
 
 /// <summary>Abstract base class for all ships.</summary>
@@ -44,7 +45,7 @@ public:
 	/// <param name="pBullets">A vector of bullet poiners that can be reused.</param>
 	/// </summary>
 	virtual void SetBulletPool(std::vector<Bullet *> *pBullets) { m_pBullets = pBullets; }
-
+	virtual void SetBulletPool2(std::vector<Bullet2 *> *pBullets) { m_pBullets2 = pBullets; }
 	/// <summary>Used to inflict damage when a ship is hit.
 	/// <param name="damage">A the amount of damage to inflict.</param>
 	/// </summary>
@@ -74,8 +75,10 @@ protected:
 	Vector2 m_gunOffset;
 
 	std::vector<Bullet *> *m_pBullets = nullptr;
+	std::vector<Bullet2 *> *m_pBullets2 = nullptr;
 
 	virtual Bullet *GetInactiveBullet();
+	virtual Bullet2 *GetInactiveBullet2();
 
 	virtual void Initialize();
 	

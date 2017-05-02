@@ -38,6 +38,7 @@ bool GameObject::AreObjectsColliding(GameObject *pGameObject1, GameObject *pGame
 		PlayerShip *pPlayerShip = dynamic_cast<PlayerShip *>(pGameObject1);
 		EnemyShip *pEnemyShip;
 		Bullet *pBullet;
+		Bullet2 *pBullet2;
 
 		if (pPlayerShip)
 		{
@@ -60,6 +61,16 @@ bool GameObject::AreObjectsColliding(GameObject *pGameObject1, GameObject *pGame
 			{
 				pBullet = dynamic_cast<Bullet *>(pGameObject2);
 				if (pBullet)
+				{
+					// Collision detected
+					ResetCollisionData(pData);
+					pData->removeObject1 = true;
+					pData->removeObject2 = true;
+					return true;
+				}
+
+				pBullet2 = dynamic_cast<Bullet2 *>(pGameObject2);
+				if (pBullet2)
 				{
 					// Collision detected
 					ResetCollisionData(pData);
