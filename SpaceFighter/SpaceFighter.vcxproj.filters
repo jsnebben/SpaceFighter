@@ -89,6 +89,9 @@
     <ClInclude Include="SmallBioEnemy.h">
       <Filter>Source Files\Game Objects</Filter>
     </ClInclude>
+    <ClInclude Include="Bullet2.h">
+      <Filter>Source Files\Game Objects</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GameplayScreen.cpp">
@@ -152,6 +155,9 @@
       <Filter>Source Files\Math</Filter>
     </ClCompile>
     <ClCompile Include="SmallBioEnemy.cpp">
+      <Filter>Source Files\Game Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Bullet2.cpp">
       <Filter>Source Files\Game Objects</Filter>
     </ClCompile>
   </ItemGroup>

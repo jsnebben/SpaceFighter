@@ -4,16 +4,6 @@
         "SpaceFighter"
     </assembly>
     <members>
-        <member name="M:Level_1.Update(GameTime!System.Runtime.CompilerServices.IsConst*)">
-            <summary>Used to update the level.
-<param name="pGameTime">A pointer to the game's timing values.</param></summary>
-        </member>
-        <member name="M:Level_1.InitializeEnemies">
-            <summary>Used to setup the enemies at the beginning of the level.</summary>
-        </member>
-        <member name="T:Level_1">
-            <summary>Class for Level 1</summary>
-        </member>
         <member name="M:PauseScreen.Draw(GameTime!System.Runtime.CompilerServices.IsConst*)">
             <summary>Used to reneder the screen.
 <param name="pGameTime">A pointer to the game's timing values.</param></summary>
@@ -45,6 +35,109 @@
         </member>
         <member name="T:GameplayScreen">
             <summary>Class for the gameplay screen. Where all of the action takes place!</summary>
+        </member>
+        <member name="M:MainMenuScreen.Draw(GameTime!System.Runtime.CompilerServices.IsConst*)">
+            <summary>Used to render the menu.
+<param name="pGameTime">A pointer to the game's timing values.</param></summary>
+        </member>
+        <member name="M:MainMenuScreen.Update(GameTime!System.Runtime.CompilerServices.IsConst*)">
+            <summary>Used to update the menu.
+<param name="pGameTime">A pointer to the game's timing values.</param></summary>
+        </member>
+        <member name="M:MainMenuScreen.LoadContent">
+            <summary>Used to load the menu's content.</summary>
+        </member>
+        <member name="T:MainMenuScreen">
+            <summary>Class for the game's main menu</summary>
+        </member>
+        <member name="T:MenuScreen">
+            <summary>Base class for all menus.</summary>
+        </member>
+        <member name="M:MenuItem.SetAlignment(System.Int32!System.Runtime.CompilerServices.IsConst)">
+            <summary>Sets the alignment for the item text.
+<param name="alpha">The alignment that the menu item text will be rendered.</param></summary>
+        </member>
+        <member name="M:MenuItem.SetAlpha(System.Single!System.Runtime.CompilerServices.IsConst)">
+            <summary>Sets the opacity for the item text.
+<param name="alpha">The opacity that the menu item text will be rendered.</param></summary>
+        </member>
+        <member name="M:MenuItem.SetColor(ALLEGRO_COLOR!System.Runtime.CompilerServices.IsConst)">
+            <summary>Sets the color for the item text.
+<param name="color">The color that the menu item text will be rendered.</param></summary>
+        </member>
+        <member name="M:MenuItem.SetPosition(Vector2!System.Runtime.CompilerServices.IsConst)">
+            <summary>Sets the position for the item text.
+<param name="position">The position on the screen that the menu item text will be
+rendered.</param></summary>
+        </member>
+        <member name="M:MenuItem.SetFont(ALLEGRO_FONT*)">
+            <summary>Sets the font for the item text.
+<param name="pFont">A pointer to the font that the menu item will use to
+display the text.</param></summary>
+        </member>
+        <member name="M:MenuItem.SetSelected(System.Boolean!System.Runtime.CompilerServices.IsConst)">
+            <summary>Makes this item the selected one in the containing menu.
+<param name="isSelected">Whether or not the item is being set as selected or
+unselected.</param></summary>
+        </member>
+        <member name="M:MenuItem.IsSelected">
+            <summary>Used to indicate if the item is the selected one in the menu.
+<returns>True if the item is selected, false otherwise.</returns></summary>
+        </member>
+        <member name="M:MenuItem.SetText(std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;!System.Runtime.CompilerServices.IsConst)">
+            <summary>Sets the display text for the item.
+<param name="text">The text that the menu item will display.</param></summary>
+        </member>
+        <member name="M:MenuItem.Select(MenuScreen*)">
+            <summary>Used to select the item.
+<param name="pMenuScreen">A pointer to the menu that the item belongs to.</param></summary>
+        </member>
+        <member name="M:MenuItem.Draw(GameTime!System.Runtime.CompilerServices.IsConst*)">
+            <summary>Used to draw the item.
+<param name="pGameTime">A pointer to the game's timing values.</param></summary>
+        </member>
+        <member name="M:MenuItem.Update(GameTime!System.Runtime.CompilerServices.IsConst*)">
+            <summary>Used to update the item.
+<param name="pGameTime">A pointer to the game's timing values.</param></summary>
+        </member>
+        <member name="T:MenuItem">
+            <summary>Class for selectable menu items.</summary>
+        </member>
+        <member name="M:Level_1.Update(GameTime!System.Runtime.CompilerServices.IsConst*)">
+            <summary>Used to update the level.
+<param name="pGameTime">A pointer to the game's timing values.</param></summary>
+        </member>
+        <member name="M:Level_1.InitializeEnemies">
+            <summary>Used to setup the enemies at the beginning of the level.</summary>
+        </member>
+        <member name="T:Level_1">
+            <summary>Class for Level 1</summary>
+        </member>
+        <member name="M:SmallBioEnemy.GetHalfDimensions">
+            <summary>Gets the half-width and half-height of the game object.
+<returns>The half dimensions of the game object.</returns></summary>
+        </member>
+        <member name="M:SmallBioEnemy.ToString">
+            <summary>Gets a string representation of the game object.
+<returns>The game object's string representation.</returns></summary>
+        </member>
+        <member name="M:SmallBioEnemy.Draw(GameTime!System.Runtime.CompilerServices.IsConst*)">
+            <summary>Used to reneder the enemy.
+<param name="pGameTime">A pointer to the game's timing values.</param></summary>
+        </member>
+        <member name="M:SmallBioEnemy.Update(GameTime!System.Runtime.CompilerServices.IsConst*)">
+            <summary>Used to update the enemy.
+<param name="pGameTime">A pointer to the game's timing values.</param></summary>
+        </member>
+        <member name="M:SmallBioEnemy.SetTexture(std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;)">
+            <summary>Sets the shared texture of all SmallBioEnemys.
+<param name="assetPath">The location of the asset within the content folder.</param></summary>
+        </member>
+        <member name="T:SmallBioEnemy">
+            <summary>Class for small bio enemies.</summary>
+        </member>
+        <member name="T:Math">
+            <summary>Helper class for common math functions and constants.</summary>
         </member>
         <member name="M:Level.UpdateSectorPosition(GameObject*)">
             <summary>Calculates and adds a game object to it's current sector.
@@ -115,32 +208,6 @@ sector position updated.</param></summary>
         </member>
         <member name="T:PlayerShip">
             <summary>Class for the player controlled ship.</summary>
-        </member>
-        <member name="T:Math">
-            <summary>Helper class for common math functions and constants.</summary>
-        </member>
-        <member name="M:SmallBioEnemy.GetHalfDimensions">
-            <summary>Gets the half-width and half-height of the game object.
-<returns>The half dimensions of the game object.</returns></summary>
-        </member>
-        <member name="M:SmallBioEnemy.ToString">
-            <summary>Gets a string representation of the game object.
-<returns>The game object's string representation.</returns></summary>
-        </member>
-        <member name="M:SmallBioEnemy.Draw(GameTime!System.Runtime.CompilerServices.IsConst*)">
-            <summary>Used to reneder the enemy.
-<param name="pGameTime">A pointer to the game's timing values.</param></summary>
-        </member>
-        <member name="M:SmallBioEnemy.Update(GameTime!System.Runtime.CompilerServices.IsConst*)">
-            <summary>Used to update the enemy.
-<param name="pGameTime">A pointer to the game's timing values.</param></summary>
-        </member>
-        <member name="M:SmallBioEnemy.SetTexture(std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;)">
-            <summary>Sets the shared texture of all SmallBioEnemys.
-<param name="assetPath">The location of the asset within the content folder.</param></summary>
-        </member>
-        <member name="T:SmallBioEnemy">
-            <summary>Class for small bio enemies.</summary>
         </member>
         <member name="M:EnemyShip.ToString">
             <summary>Gets a string representation of the game object.
@@ -221,23 +288,6 @@ sector position updated.</param></summary>
         <member name="T:Bullet">
             <summary>Class for bullet objects.</summary>
         </member>
-        <member name="M:MainMenuScreen.Draw(GameTime!System.Runtime.CompilerServices.IsConst*)">
-            <summary>Used to render the menu.
-<param name="pGameTime">A pointer to the game's timing values.</param></summary>
-        </member>
-        <member name="M:MainMenuScreen.Update(GameTime!System.Runtime.CompilerServices.IsConst*)">
-            <summary>Used to update the menu.
-<param name="pGameTime">A pointer to the game's timing values.</param></summary>
-        </member>
-        <member name="M:MainMenuScreen.LoadContent">
-            <summary>Used to load the menu's content.</summary>
-        </member>
-        <member name="T:MainMenuScreen">
-            <summary>Class for the game's main menu</summary>
-        </member>
-        <member name="T:MenuScreen">
-            <summary>Base class for all menus.</summary>
-        </member>
         <member name="M:GameObject.GetIndex">
             <summary>Gets the index of the game object for debugging purposes.
 <returns>The game object's index.</returns></summary>
@@ -282,56 +332,6 @@ details about the collision.</param><returns>True if the game objects are collid
         </member>
         <member name="T:GameObject">
             <summary>Abstract base class for all game objects.</summary>
-        </member>
-        <member name="M:MenuItem.SetAlignment(System.Int32!System.Runtime.CompilerServices.IsConst)">
-            <summary>Sets the alignment for the item text.
-<param name="alpha">The alignment that the menu item text will be rendered.</param></summary>
-        </member>
-        <member name="M:MenuItem.SetAlpha(System.Single!System.Runtime.CompilerServices.IsConst)">
-            <summary>Sets the opacity for the item text.
-<param name="alpha">The opacity that the menu item text will be rendered.</param></summary>
-        </member>
-        <member name="M:MenuItem.SetColor(ALLEGRO_COLOR!System.Runtime.CompilerServices.IsConst)">
-            <summary>Sets the color for the item text.
-<param name="color">The color that the menu item text will be rendered.</param></summary>
-        </member>
-        <member name="M:MenuItem.SetPosition(Vector2!System.Runtime.CompilerServices.IsConst)">
-            <summary>Sets the position for the item text.
-<param name="position">The position on the screen that the menu item text will be
-rendered.</param></summary>
-        </member>
-        <member name="M:MenuItem.SetFont(ALLEGRO_FONT*)">
-            <summary>Sets the font for the item text.
-<param name="pFont">A pointer to the font that the menu item will use to
-display the text.</param></summary>
-        </member>
-        <member name="M:MenuItem.SetSelected(System.Boolean!System.Runtime.CompilerServices.IsConst)">
-            <summary>Makes this item the selected one in the containing menu.
-<param name="isSelected">Whether or not the item is being set as selected or
-unselected.</param></summary>
-        </member>
-        <member name="M:MenuItem.IsSelected">
-            <summary>Used to indicate if the item is the selected one in the menu.
-<returns>True if the item is selected, false otherwise.</returns></summary>
-        </member>
-        <member name="M:MenuItem.SetText(std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;!System.Runtime.CompilerServices.IsConst)">
-            <summary>Sets the display text for the item.
-<param name="text">The text that the menu item will display.</param></summary>
-        </member>
-        <member name="M:MenuItem.Select(MenuScreen*)">
-            <summary>Used to select the item.
-<param name="pMenuScreen">A pointer to the menu that the item belongs to.</param></summary>
-        </member>
-        <member name="M:MenuItem.Draw(GameTime!System.Runtime.CompilerServices.IsConst*)">
-            <summary>Used to draw the item.
-<param name="pGameTime">A pointer to the game's timing values.</param></summary>
-        </member>
-        <member name="M:MenuItem.Update(GameTime!System.Runtime.CompilerServices.IsConst*)">
-            <summary>Used to update the item.
-<param name="pGameTime">A pointer to the game's timing values.</param></summary>
-        </member>
-        <member name="T:MenuItem">
-            <summary>Class for selectable menu items.</summary>
         </member>
         <member name="M:Game.GetInputState">
             <summary>Used to retrieve a reference to the game's input data.
@@ -562,6 +562,7 @@ devices. Currently the keyboard, and up to four game pads.
         <member name="T:GameTime">
             <summary>Class for managing the game's timing values.</summary>
         </member>
+        <!-- Discarding badly formed XML document comment for member 'M:Math.Lerp(System.Single!System.Runtime.CompilerServices.IsConst,System.Single!System.Runtime.CompilerServices.IsConst,System.Single)'. -->
         <!-- Discarding badly formed XML document comment for member 'M:MenuScreen.HandleInput(InputState*)'. -->
         <!-- Discarding badly formed XML document comment for member 'M:MenuScreen.Draw(GameTime!System.Runtime.CompilerServices.IsConst*)'. -->
         <!-- Discarding badly formed XML document comment for member 'M:MenuScreen.SetItemListWrapping(System.Boolean!System.Runtime.CompilerServices.IsConst)'. -->
@@ -572,6 +573,5 @@ devices. Currently the keyboard, and up to four game pads.
         <!-- Discarding badly formed XML document comment for member 'M:MenuScreen.HandleInput(InputState*)'. -->
         <!-- Discarding badly formed XML document comment for member 'M:MenuScreen.Draw(GameTime!System.Runtime.CompilerServices.IsConst*)'. -->
         <!-- Discarding badly formed XML document comment for member 'M:MenuScreen.SetItemListWrapping(System.Boolean!System.Runtime.CompilerServices.IsConst)'. -->
-        <!-- Discarding badly formed XML document comment for member 'M:Math.Lerp(System.Single!System.Runtime.CompilerServices.IsConst,System.Single!System.Runtime.CompilerServices.IsConst,System.Single)'. -->
     </members>
 </doc>
