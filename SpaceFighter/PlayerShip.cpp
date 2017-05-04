@@ -125,7 +125,7 @@ void PlayerShip::Fire2()
 		if (pBullet2)
 		{
 			pBullet2->Activate(m_position + m_gunOffset);
-			m_coolDownTime = m_maxCoolDownTime;
+			m_coolDownTime = m_maxCoolDownTime/2;
 		}
 	}
 }

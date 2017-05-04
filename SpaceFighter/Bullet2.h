@@ -22,6 +22,9 @@ class Bullet2 : public GameObject
 public:
 
 	Bullet2();
+
+	Bullet2(int directionId) ;
+
 	virtual ~Bullet2() { }
 
 	/// <summary>Sets the shared texture of all bullets.

@@ -38,6 +38,10 @@ void Bullet2::Update(const GameTime *pGameTime)
 		{
 			Deactivate();
 		}
+		//if (m_speed > 250)
+		//{
+			m_speed *= .985;
+		//}
 	}
 
 	GameObject::Update(pGameTime);
@@ -57,12 +61,16 @@ void Bullet2::Draw(const GameTime *pGameTime)
 void Bullet2::Activate(Vector2 position, bool isShotByPlayer)
 {
 	GameObject::Activate();
+	m_speed = 500;
 
 	m_position.Set(position);
 
 	if (isShotByPlayer)
 	{
-		m_direction.Set(0.0f, -1.0f); // moves upward
+		float xmag = (((float)rand() / (RAND_MAX)) * 2 - 1) / 2;
+		
+
+		m_direction.Set(xmag, sqrt(2.25 - (xmag *xmag)) * -1); // moves upward
 	}
 }
 

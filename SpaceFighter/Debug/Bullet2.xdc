@@ -354,33 +354,33 @@ details about the collision.</param>
 <member name="T:Bullet2" decl="false" source="c:\users\300016613\desktop\spacefighter\spacefighter\bullet2.h" line="19">
 <summary>Class for bullet2 objects.</summary>
 </member>
-<member name="M:Bullet2.SetTexture(std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;)" decl="true" source="c:\users\300016613\desktop\spacefighter\spacefighter\bullet2.h" line="27">
+<member name="M:Bullet2.SetTexture(std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;)" decl="true" source="c:\users\300016613\desktop\spacefighter\spacefighter\bullet2.h" line="30">
 <summary>Sets the shared texture of all bullets.
 <param name="assetPath">The location of the asset within the content folder.</param>
 </summary>
 </member>
-<member name="M:Bullet2.Update(GameTime!System.Runtime.CompilerServices.IsConst*)" decl="true" source="c:\users\300016613\desktop\spacefighter\spacefighter\bullet2.h" line="32">
+<member name="M:Bullet2.Update(GameTime!System.Runtime.CompilerServices.IsConst*)" decl="true" source="c:\users\300016613\desktop\spacefighter\spacefighter\bullet2.h" line="35">
 <summary>Used to update the screen.
 <param name="pGameTime">A pointer to the game's timing values.</param>
 </summary>
 </member>
-<member name="M:Bullet2.Draw(GameTime!System.Runtime.CompilerServices.IsConst*)" decl="true" source="c:\users\300016613\desktop\spacefighter\spacefighter\bullet2.h" line="37">
+<member name="M:Bullet2.Draw(GameTime!System.Runtime.CompilerServices.IsConst*)" decl="true" source="c:\users\300016613\desktop\spacefighter\spacefighter\bullet2.h" line="40">
 <summary>Used to reneder the bullet.
 <param name="pGameTime">A pointer to the game's timing values.</param>
 </summary>
 </member>
-<member name="M:Bullet2.Activate(Vector2,System.Boolean)" decl="true" source="c:\users\300016613\desktop\spacefighter\spacefighter\bullet2.h" line="42">
+<member name="M:Bullet2.Activate(Vector2,System.Boolean)" decl="true" source="c:\users\300016613\desktop\spacefighter\spacefighter\bullet2.h" line="45">
 <summary>Activates the bullet.
 <param name="position">The position where the bullet should start.</param>
 <param name="isShotByPlayer">Specifies if the player ship shot the bullet.</param>
 </summary>
 </member>
-<member name="M:Bullet2.GetDamage" decl="false" source="c:\users\300016613\desktop\spacefighter\spacefighter\bullet2.h" line="48">
+<member name="M:Bullet2.GetDamage" decl="false" source="c:\users\300016613\desktop\spacefighter\spacefighter\bullet2.h" line="51">
 <summary>Gets the dammage that the bullet inflicts.
 <returns>The damage value that the bullet inflicts.</returns>
 </summary>
 </member>
-<member name="M:Bullet2.ToString" decl="false" source="c:\users\300016613\desktop\spacefighter\spacefighter\bullet2.h" line="53">
+<member name="M:Bullet2.ToString" decl="false" source="c:\users\300016613\desktop\spacefighter\spacefighter\bullet2.h" line="56">
 <summary>Gets a string representation of the game object.
 <returns>The game object's string representation.</returns>
 </summary>
